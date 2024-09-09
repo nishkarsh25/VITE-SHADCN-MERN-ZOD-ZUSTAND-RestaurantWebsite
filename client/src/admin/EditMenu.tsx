@@ -68,7 +68,14 @@ const EditMenu = ({
     }
   };
 
-  
+  useEffect(() => { 
+    setInput({
+      name: selectedMenu?.name || "",
+      description: selectedMenu?.description || "",
+      price: selectedMenu?.price || 0,
+      image: undefined,
+    });
+  }, [selectedMenu]);
   
 };
 
