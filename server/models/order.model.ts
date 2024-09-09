@@ -58,4 +58,4 @@ const orderSchema = new mongoose.Schema<IOrder>({
     }
 
 
-});
+}, { timestamps: true });
