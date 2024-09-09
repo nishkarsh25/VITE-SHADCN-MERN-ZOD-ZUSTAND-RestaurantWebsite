@@ -43,4 +43,4 @@ const restaurantSchema = new mongoose.Schema<IRestaurantDocument>({
         type:String,
         required:true
     }
-});
+},{timestamps:true});
