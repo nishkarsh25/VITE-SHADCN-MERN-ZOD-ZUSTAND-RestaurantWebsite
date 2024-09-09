@@ -19,5 +19,18 @@ type User = {
     isVerified:boolean;
 }
 
-
+type UserState = {
+    user: User | null;
+    isAuthenticated: boolean;
+    isCheckingAuth: boolean;
+    loading: boolean;
+    signup: (input:SignupInputState) => Promise<void>;
+    login: (input:LoginInputState) => Promise<void>;
+    verifyEmail: (verificationCode: string) => Promise<void>;
+    checkAuthentication: () => Promise<void>;
+    logout: () => Promise<void>;
+    forgotPassword: (email:string) => Promise<void>; 
+    resetPassword: (token:string, newPassword:string) => Promise<void>; 
+    updateProfile: (input:any) => Promise<void>; 
+}
 
