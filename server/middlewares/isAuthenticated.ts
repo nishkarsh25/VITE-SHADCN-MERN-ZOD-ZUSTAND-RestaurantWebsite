@@ -30,6 +30,8 @@ export const isAuthenticated = async (req: Request, res: Response, next: NextFun
         req.id = decode.userId;
         next();
     } catch (error) {
-        
+        return res.status(500).json({
+            message: "Internal server error"
+        })
     }
 }
