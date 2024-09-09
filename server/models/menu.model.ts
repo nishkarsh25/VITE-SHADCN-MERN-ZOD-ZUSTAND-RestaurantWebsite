@@ -29,5 +29,5 @@ const menuSchema = new mongoose.Schema<IMenuDocument>({
     type:String,
     required:true
   },
-});
+},{timestamps:true});
 
