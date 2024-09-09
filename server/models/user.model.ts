@@ -72,3 +72,4 @@ const userSchema = new mongoose.Schema<IUserDocument>({
     verificationTokenExpiresAt:Date,
 },{timestamps:true});
 
+export const User : Model<IUserDocument> = mongoose.model<IUserDocument>("User", userSchema);
