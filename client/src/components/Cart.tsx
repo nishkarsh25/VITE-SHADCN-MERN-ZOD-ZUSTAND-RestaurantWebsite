@@ -15,6 +15,12 @@ import CheckoutConfirmPage from "./CheckoutConfirmPage";
 import { useCartStore } from "@/store/useCartStore";
 import { CartItem } from "@/types/cartType";
 
+const Cart = () => {
+  const [open, setOpen] = useState<boolean>(false);
+  const { cart, decrementQuantity, incrementQuantity } = useCartStore();
 
+  
+  
+};
 
 
