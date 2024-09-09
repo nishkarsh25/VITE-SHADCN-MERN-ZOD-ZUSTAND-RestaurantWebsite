@@ -43,4 +43,4 @@ const AvailableMenu = ({ menus }: { menus: MenuItem[] }) => {
   );
 };
 
-
+export default AvailableMenu;
