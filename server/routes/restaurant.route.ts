@@ -3,7 +3,7 @@ import { createRestaurant, getRestaurant, getRestaurantOrder, getSingleRestauran
 import upload from "../middlewares/multer";
 import {isAuthenticated} from "../middlewares/isAuthenticated";
 
-
+const router = express.Router();
 
 
 
