@@ -28,7 +28,37 @@ const Profile = () => {
   const [selectedProfilePicture, setSelectedProfilePicture] =
     useState<string>( profileData.profilePicture || "");
  
-  
+  const fileChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        const result = reader.result as string;
+        setSelectedProfilePicture(result);
+        setProfileData((prevData) => ({
+          ...prevData,
+          profilePicture: result,
+        }));
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setProfileData({ ...profileData, [name]: value });
+  };
+
+  const updateProfileHandler = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      setIsLoading(true);
+      await updateProfile(profileData);
+      setIsLoading(false);
+    } catch (error) {
+      setIsLoading(false);
+    }
+  };
 
   
 };
