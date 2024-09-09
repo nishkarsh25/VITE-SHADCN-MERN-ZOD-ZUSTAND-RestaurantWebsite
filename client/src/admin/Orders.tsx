@@ -10,5 +10,13 @@ import {
 import { useRestaurantStore } from "@/store/useRestaurantStore";
 import { useEffect } from "react";
 
+const Orders = () => {
+  const { restaurantOrder, getRestaurantOrders, updateRestaurantOrder } =
+    useRestaurantStore();
+
+  
+  
+  
+};
 
 
