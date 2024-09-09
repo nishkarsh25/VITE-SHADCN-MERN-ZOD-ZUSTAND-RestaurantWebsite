@@ -10,7 +10,7 @@ import menuRoute from "./routes/menu.route";
 import orderRoute from "./routes/order.route";
 import path from "path";
 
-
+dotenv.config();
 
 
 
