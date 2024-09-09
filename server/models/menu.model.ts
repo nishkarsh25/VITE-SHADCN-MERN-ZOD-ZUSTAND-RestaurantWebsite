@@ -12,5 +12,22 @@ export interface IMenuDocument extends IMenu, Document {
     updatedAt:Date;
 }
 
-
+const menuSchema = new mongoose.Schema<IMenuDocument>({
+  name:{
+    type:String,
+    required:true
+  },
+  description:{
+    type:String,
+    required:true
+  },
+  price:{
+    type:Number,
+    required:true
+  },
+  image:{
+    type:String,
+    required:true
+  },
+});
 
