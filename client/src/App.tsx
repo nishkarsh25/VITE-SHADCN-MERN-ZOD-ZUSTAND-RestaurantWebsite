@@ -52,7 +52,75 @@ const AdminRoute = ({children}:{children:React.ReactNode}) => {
   return children;
 }
 
-
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <ProtectedRoutes>
+        <MainLayout />
+      </ProtectedRoutes>
+    ),
+    children: [
+      {
+        path: "/",
+        element: <HereSection />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
+      },
+      {
+        path: "/search/:text",
+        element: <SearchPage />,
+      },
+      {
+        path: "/restaurant/:id",
+        element: <RestaurantDetail />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
+        path: "/order/status",
+        element: <Success />,
+      },
+      // admin services start from here
+      {
+        path: "/admin/restaurant",
+        element:<AdminRoute><Restaurant /></AdminRoute>,
+      },
+      {
+        path: "/admin/menu",
+        element:<AdminRoute><AddMenu /></AdminRoute>,
+      },
+      {
+        path: "/admin/orders",
+        element:<AdminRoute><Orders /></AdminRoute>,
+      },
+    ],
+  },
+  {
+    path: "/login",
+    element:<AuthenticatedUser><Login /></AuthenticatedUser>,
+  },
+  {
+    path: "/signup",
+    element:<AuthenticatedUser><Signup /></AuthenticatedUser> ,
+  },
+  {
+    path: "/forgot-password",
+    element: <AuthenticatedUser><ForgotPassword /></AuthenticatedUser>,
+  },
+  {
+    path: "/reset-password",
+    element: <ResetPassword />,
+  },
+  {
+    path: "/verify-email",
+    element: <VerifyEmail />,
+  },
+]);
 
 
 
