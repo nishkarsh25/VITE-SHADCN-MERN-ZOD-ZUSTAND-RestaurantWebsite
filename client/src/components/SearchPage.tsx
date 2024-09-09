@@ -11,7 +11,21 @@ import { Skeleton } from "./ui/skeleton";
 import { useRestaurantStore } from "@/store/useRestaurantStore";
 import { Restaurant } from "@/types/restaurantType";
 
+const SearchPage = () => {
+  const params = useParams();
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  const {
+    loading,
+    searchedRestaurant,
+    searchRestaurant,
+    setAppliedFilter,
+    appliedFilter,
+  } = useRestaurantStore();
 
+  
+
+  
+};
 
 
 
