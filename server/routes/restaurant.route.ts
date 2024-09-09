@@ -13,7 +13,7 @@ router.route("/order/:orderId/status").put(isAuthenticated, updateOrderStatus);
 router.route("/search/:searchText").get(isAuthenticated, searchRestaurant);
 router.route("/:id").get(isAuthenticated, getSingleRestaurant);
 
-
+export default router;
 
 
 
