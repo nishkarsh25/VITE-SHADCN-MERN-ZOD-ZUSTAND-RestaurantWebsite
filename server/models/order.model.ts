@@ -15,6 +15,13 @@ type CartItems = {
     quantity: number;
 }
 
-
+export interface IOrder extends Document {
+    user: mongoose.Schema.Types.ObjectId;
+    restaurant: mongoose.Schema.Types.ObjectId;
+    deliveryDetails: DeliveryDetails,
+    cartItems: CartItems;
+    totalAmount: number;
+    status: "pending" | "confirmed" | "preparing" | "outfordelivery" | "delivered"
+}
 
 
