@@ -15,6 +15,12 @@ const filterOptions: FilterOptionsState[] = [
   { id: "momos", label: "Momos" },
 ];
 
-
+const FilterPage = () => {
+  const { setAppliedFilter, appliedFilter, resetAppliedFilter } = useRestaurantStore();
+  const appliedFilterHandler = (value: string) => {
+    setAppliedFilter(value);
+  };
+  
+};
 
 
