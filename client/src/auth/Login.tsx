@@ -7,6 +7,16 @@ import { Loader2, LockKeyhole, Mail } from "lucide-react";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+const Login = () => {
+  const [input, setInput] = useState<LoginInputState>({
+    email: "",
+    password: "",
+  });
+  const [errors, setErrors] = useState<Partial<LoginInputState>>({});
+  const { loading, login } = useUserStore();
+  
 
+  
+};
 
 
