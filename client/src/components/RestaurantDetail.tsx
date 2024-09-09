@@ -5,6 +5,16 @@ import { Timer } from "lucide-react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+const RestaurantDetail = () => {
+  const params = useParams();
+  const { singleRestaurant, getSingleRestaurant } = useRestaurantStore();
 
+  useEffect(() => {
+    getSingleRestaurant(params.id!); 
+    
+  }, [params.id]);
+
+  
+};
 
 
