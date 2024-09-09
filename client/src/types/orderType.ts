@@ -21,3 +21,9 @@ export interface Orders extends CheckoutSessionRequest {
     status:string;
     totalAmount:number;
 }
+export type OrderState = {
+    loading:boolean;
+    orders:Orders[];
+    createCheckoutSession: (checkoutSessionRequest:CheckoutSessionRequest) => Promise<void>;
+    getOrderDetails: () => Promise<void>;
+}
