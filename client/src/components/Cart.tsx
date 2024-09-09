@@ -19,7 +19,9 @@ const Cart = () => {
   const [open, setOpen] = useState<boolean>(false);
   const { cart, decrementQuantity, incrementQuantity } = useCartStore();
 
-  
+  let totalAmount = cart.reduce((acc, ele) => {
+    return acc + ele.price * ele.quantity;
+  }, 0);
   
 };
 
