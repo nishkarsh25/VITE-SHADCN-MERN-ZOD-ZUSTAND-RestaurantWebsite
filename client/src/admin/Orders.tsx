@@ -14,7 +14,9 @@ const Orders = () => {
   const { restaurantOrder, getRestaurantOrders, updateRestaurantOrder } =
     useRestaurantStore();
 
-  
+  const handleStatusChange = async (id: string, status: string) => {
+    await updateRestaurantOrder(id, status);
+  };
   
   
 };
