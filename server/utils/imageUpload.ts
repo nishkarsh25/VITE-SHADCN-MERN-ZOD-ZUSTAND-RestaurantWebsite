@@ -6,3 +6,4 @@ const uploadImageOnCloudinary = async (file:Express.Multer.File) => {
     const uploadResponse = await cloudinary.uploader.upload(dataURI);
     return uploadResponse.secure_url;
 };
+export default uploadImageOnCloudinary;
