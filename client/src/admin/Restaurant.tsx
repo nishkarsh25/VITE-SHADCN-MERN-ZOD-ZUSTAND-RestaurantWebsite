@@ -27,9 +27,45 @@ const Restaurant = () => {
     getRestaurant,
   } = useRestaurantStore();
 
-  
+  const changeEventHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value, type } = e.target;
+    setInput({ ...input, [name]: type === "number" ? Number(value) : value });
+  };
 
- 
+  const submitHandler = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    const result = restaurantFromSchema.safeParse(input);
+    if (!result.success) {
+      const fieldErrors = result.error.formErrors.fieldErrors;
+      setErrors(fieldErrors as Partial<RestaurantFormSchema>);
+      return;
+    }
+    // add restaurant api implementation start from here
+    try {
+      const formData = new FormData();
+      formData.append("restaurantName", input.restaurantName);
+      formData.append("city", input.city);
+      formData.append("country", input.country);
+      formData.append("deliveryTime", input.deliveryTime.toString());
+      formData.append("cuisines", JSON.stringify(input.cuisines));
+
+      if (input.imageFile) {
+        formData.append("imageFile", input.imageFile);
+      }
+
+      if (restaurant) {
+        // update
+        await updateRestaurant(formData);
+      } else {
+        // create
+        await createRestaurant(formData);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   
 
   
