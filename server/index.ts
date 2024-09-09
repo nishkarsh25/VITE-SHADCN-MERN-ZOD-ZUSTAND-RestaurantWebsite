@@ -29,7 +29,11 @@ const corsOptions = {
 }
 app.use(cors(corsOptions));
 
-
+// api
+app.use("/api/v1/user", userRoute);
+app.use("/api/v1/restaurant", restaurantRoute);
+app.use("/api/v1/menu", menuRoute);
+app.use("/api/v1/order", orderRoute);
 
 
 
