@@ -197,3 +197,58 @@ export const generatePasswordResetEmailHtml = (resetURL: string) => {
       </html>
     `;
   };
+
+  export const generateResetSuccessEmailHtml = () => {
+    return `
+      <html>
+        <head>
+          <style>
+            .email-container {
+              font-family: Arial, sans-serif;
+              line-height: 1.6;
+              color: #333;
+              padding: 20px;
+              background-color: #f4f4f4;
+              border-radius: 10px;
+              max-width: 600px;
+              margin: auto;
+            }
+            .email-header {
+              background-color: #4CAF50;
+              color: white;
+              padding: 10px;
+              text-align: center;
+              border-radius: 10px 10px 0 0;
+            }
+            .email-body {
+              padding: 20px;
+              background-color: white;
+              border-radius: 0 0 10px 10px;
+            }
+            .email-footer {
+              text-align: center;
+              padding: 10px;
+              font-size: 12px;
+              color: #777;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="email-container">
+            <div class="email-header">
+              <h1>Password Reset Successful</h1>
+            </div>
+            <div class="email-body">
+              <p>Hi,</p>
+              <p>Your password has been successfully reset. You can now log in with your new password.</p>
+              <p>If you did not request this change, please contact our support team immediately.</p>
+              <p>Thank you,<br/>The Patel Food Team</p>
+            </div>
+            <div class="email-footer">
+              <p>&copy; 2024 Patel Food. All rights reserved.</p>
+            </div>
+          </div>
+        </body>
+      </html>
+    `;
+  };
