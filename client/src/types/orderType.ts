@@ -16,4 +16,8 @@ export type CheckoutSessionRequest = {
     },
     restaurantId:string;
 }
-
+export interface Orders extends CheckoutSessionRequest {
+    _id:string;
+    status:string;
+    totalAmount:number;
+}
