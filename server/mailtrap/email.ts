@@ -17,5 +17,23 @@ export const sendVerificationEmail = async (email: string, verificationToken: st
 
     }
 }
-
+export const sendWelcomeEmail = async (email: string, name: string) => {
+    const recipient = [{ email }];
+    const htmlContent = generateWelcomeEmailHtml(name);
+    try {
+        const res = await client.send({
+            from: sender,
+            to: recipient,
+            subject: 'Welcome to PatelEats',
+            html:htmlContent,
+            template_variables:{
+                company_info_name:"PatelEats",
+                name:name
+            }
+        });
+    } catch (error) {
+        console.log(error);
+        throw new Error("Failed to send welcome email")
+    }
+}
 
