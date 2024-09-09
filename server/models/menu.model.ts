@@ -7,7 +7,10 @@ export interface IMenu {
     price:number;
     image:string;
 }
-
+export interface IMenuDocument extends IMenu, Document {
+    createdAt:Date;
+    updatedAt:Date;
+}
 
 
 
