@@ -77,7 +77,36 @@ export const login = async (req: Request, res: Response) => {
         return res.status(500).json({ message: "Internal server error" })
     }
 }
+export const verifyEmail = async (req: Request, res: Response) => {
+    try {
+        const { verificationCode } = req.body;
+       
+        const user = await User.findOne({ verificationToken: verificationCode, verificationTokenExpiresAt: { $gt: Date.now() } }).select("-password");
 
+        if (!user) {
+            return res.status(400).json({
+                success: false,
+                message: "Invalid or expired verification token"
+            });
+        }
+        user.isVerified = true;
+        user.verificationToken = undefined;
+        user.verificationTokenExpiresAt = undefined
+        await user.save();
+
+        // send welcome email
+        await sendWelcomeEmail(user.email, user.fullname);
+
+        return res.status(200).json({
+            success: true,
+            message: "Email verified successfully.",
+            user,
+        })
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ message: "Internal server error" })
+    }
+}
 
 
 
