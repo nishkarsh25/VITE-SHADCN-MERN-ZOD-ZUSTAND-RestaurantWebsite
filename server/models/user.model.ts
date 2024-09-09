@@ -18,7 +18,10 @@ export interface IUser {
     verificationTokenExpiresAt?:Date
 }
 
-
+export interface IUserDocument extends IUser, Document {
+    createdAt:Date;
+    updatedAt:Date;
+}
 
 
 
