@@ -19,5 +19,7 @@ export type Restaurant = {
     imageUrl: string;
 }
 
-
+export type SearchedRestaurant = {
+    data:Restaurant[]
+}
 
