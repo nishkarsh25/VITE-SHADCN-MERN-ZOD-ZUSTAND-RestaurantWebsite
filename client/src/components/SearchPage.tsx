@@ -22,7 +22,9 @@ const SearchPage = () => {
     appliedFilter,
   } = useRestaurantStore();
 
-  
+  useEffect(() => {
+    searchRestaurant(params.text!, searchQuery, appliedFilter);
+  }, [params.text!, appliedFilter]);
 
   
 };
