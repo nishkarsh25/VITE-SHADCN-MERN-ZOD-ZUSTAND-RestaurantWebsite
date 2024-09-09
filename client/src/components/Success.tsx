@@ -7,6 +7,14 @@ import { useOrderStore } from "@/store/useOrderStore";
 import { useEffect } from "react"; 
 import { CartItem } from "@/types/cartType";
 
+const Success = () => {
+  const { orders, getOrderDetails } = useOrderStore();
 
+  
+
+  
+
+  
+};
 
 
