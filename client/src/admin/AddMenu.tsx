@@ -199,4 +199,4 @@ const AddMenu = () => {
   );
 };
 
-
+export default AddMenu;
