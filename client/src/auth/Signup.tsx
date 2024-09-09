@@ -124,4 +124,4 @@ const navigate = useNavigate();
   );
 };
 
-
+export default Signup;
