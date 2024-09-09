@@ -4,6 +4,11 @@ import { Loader2, LockKeyholeIcon } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+const ResetPassword = () => {
+    const [newPassword, setNewPassword] = useState<string>("");
+    const loading =  false;
 
+  
+};
 
 
