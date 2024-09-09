@@ -145,4 +145,4 @@ const CheckoutConfirmPage = ({
   );
 };
 
-
+export default CheckoutConfirmPage;
