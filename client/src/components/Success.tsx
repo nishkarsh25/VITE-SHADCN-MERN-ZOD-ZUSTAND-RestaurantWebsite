@@ -10,7 +10,9 @@ import { CartItem } from "@/types/cartType";
 const Success = () => {
   const { orders, getOrderDetails } = useOrderStore();
 
-  
+  useEffect(() => {
+    getOrderDetails();
+  }, []);
 
   
 
