@@ -8,3 +8,4 @@ cloudinary.config({
     cloud_name:process.env.CLOUD_NAME,
 });
 
+export default cloudinary;
