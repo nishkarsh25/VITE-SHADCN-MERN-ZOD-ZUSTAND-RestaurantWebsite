@@ -40,7 +40,17 @@ const AuthenticatedUser = ({ children }: { children: React.ReactNode }) => {
   return children;
 };
 
+const AdminRoute = ({children}:{children:React.ReactNode}) => {
+  const {user, isAuthenticated} = useUserStore();
+  if(!isAuthenticated){
+    return <Navigate to="/login" replace/>
+  }
+  if(!user?.admin){
+    return <Navigate to="/" replace/>
+  }
 
+  return children;
+}
 
 
 
