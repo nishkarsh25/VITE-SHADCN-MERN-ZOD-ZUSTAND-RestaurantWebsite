@@ -14,8 +14,14 @@ const Success = () => {
     getOrderDetails();
   }, []);
 
-  
-  
+  if (orders.length === 0)
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <h1 className="font-bold text-2xl text-gray-700 dark:text-gray-300">
+          Order not found!
+        </h1>
+      </div>
+    );
 
   
 };
