@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use(express.json());
 app.use(cookieParser());
 const corsOptions = {
-    origin: "http://localhost:5173",
+    origin: "http://localhost:8000",
     credentials: true
 }
 app.use(cors(corsOptions));
@@ -40,3 +40,7 @@ app.use("*",(_,res) => {
     res.sendFile(path.resolve(DIRNAME, "client","dist","index.html"));
 });
 
+app.listen(PORT, () => {
+    connectDB();
+    console.log(`Server listen at port ${PORT}`);
+});
