@@ -34,7 +34,7 @@ This project is perfect for building a scalable and modular food delivery platfo
 
 ## Live Demo
 
-You can try out the live demo of the app [here](https://vite-shadcn-mern-redux-socket.onrender.com).
+You can try out the live demo of the app [here](https://vite-shadcn-mern-zod-zustand.onrender.com).
 
 ## Folder Structure
 
