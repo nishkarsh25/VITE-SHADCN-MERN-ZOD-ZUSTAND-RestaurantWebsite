@@ -513,11 +513,11 @@ This project is made possible by the contributions and support of various indivi
 This project wouldn't be possible without the contributions of the following:
 
 - **React**: A JavaScript library for building user interfaces. Visit [React](https://reactjs.org/) for more information.
-- 
+  
 - **Vite**: A fast build tool that serves your code via native ESM. Visit [Vite](https://vitejs.dev/) for more information.
   
 - **Shadcn UI**: A component library providing a set of highly customizable UI components built for React. Visit [Shadcn UI](https://ui.shadcn.com/docs/installation/vite) for more information.
-- 
+  
 - **Tailwind CSS**: A utility-first CSS framework for creating custom designs rapidly. Visit [Tailwind CSS](https://tailwindcss.com/) for more information.
 
 - **React Router**: React Router is a library for routing in React applications, allowing for navigation between different components. Visit [React Router](https://reactrouter.com/) for more information.
