@@ -127,7 +127,7 @@ You can try out the live demo of the app [here](https://vite-shadcn-mern-redux-s
 
 ## GIF's
 
-<img src="VITE-SHADCN-MERN-ZOD-ZUSTAND-RestaurantWebsite/blob/main/Screenshots/ss1.gif" alt="Screenshot 1" width="1000">
+<img src="https://github.com/nishkarsh25/VITE-SHADCN-MERN-ZOD-ZUSTAND-RestaurantWebsite/blob/main/Screenshots/ss1.gif" alt="Screenshot 1" width="1000">
 
 ## **Tech Stack**
 
