@@ -39,39 +39,89 @@ You can try out the live demo of the app [here](https://vite-shadcn-mern-redux-s
 ## Folder Structure
 
 ```
+📦public
+ ┣ 📜index.html
+ ┣ 📜favicon.ico
+ ┗ 📂assets
+   ┗ 📂images
+
 📦src
+ ┣ 📂auth
+ ┃ ┣ 📜Login.tsx
+ ┃ ┣ 📜Signup.tsx
+ ┃ ┣ 📜ForgotPassword.tsx
+ ┃ ┗ 📜ResetPassword.tsx
  ┣ 📂admin
  ┃ ┣ 📜AddMenu.tsx
  ┃ ┣ 📜Orders.tsx
  ┃ ┗ 📜Restaurant.tsx
- ┣ 📂auth
- ┃ ┣ 📜ForgotPassword.tsx
- ┃ ┣ 📜Login.tsx
- ┃ ┣ 📜ResetPassword.tsx
- ┃ ┗ 📜Signup.tsx
  ┣ 📂components
  ┃ ┣ 📜Cart.tsx
  ┃ ┣ 📜HereSection.tsx
  ┃ ┣ 📜Loading.tsx
  ┃ ┣ 📜Profile.tsx
  ┃ ┣ 📜RestaurantDetail.tsx
- ┃ ┗ 📜Success.tsx
+ ┃ ┣ 📜SearchPage.tsx
+ ┃ ┣ 📜Success.tsx
+ ┃ ┗ 📂ui
+ ┃   ┣ 📜button.tsx
+ ┃   ┣ 📜dialog.tsx
+ ┃   ┣ 📜input.tsx
+ ┃   ┗ 📜separator.tsx
  ┣ 📂layout
  ┃ ┗ 📜MainLayout.tsx
  ┣ 📂store
+ ┃ ┣ 📜useUserStore.ts
  ┃ ┣ 📜useCartStore.ts
  ┃ ┣ 📜useOrderStore.ts
- ┃ ┣ 📜useRestaurantStore.ts
- ┃ ┗ 📜useUserStore.ts
+ ┃ ┗ 📜useThemeStore.ts
  ┣ 📂types
  ┃ ┣ 📜cartType.ts
- ┃ ┣ 📜orderType.ts
- ┃ ┗ 📜userType.ts
+ ┃ ┗ 📜orderType.ts
  ┣ 📜App.tsx
- ┣ 📜index.css
- ┗ 📜main.tsx
+ ┣ 📜main.tsx
+ ┗ 📜index.css
 
+📦backend
+ ┣ 📂config
+ ┃ ┣ 📜db.js
+ ┃ ┗ 📜jwt.js
+ ┣ 📂controllers
+ ┃ ┣ 📜authController.js
+ ┃ ┣ 📜orderController.js
+ ┃ ┣ 📜restaurantController.js
+ ┃ ┗ 📜menuController.js
+ ┣ 📂middlewares
+ ┃ ┣ 📜authMiddleware.js
+ ┃ ┗ 📜errorHandler.js
+ ┣ 📂models
+ ┃ ┣ 📜userModel.js
+ ┃ ┣ 📜orderModel.js
+ ┃ ┣ 📜restaurantModel.js
+ ┃ ┗ 📜menuModel.js
+ ┣ 📂routes
+ ┃ ┣ 📜authRoutes.js
+ ┃ ┣ 📜orderRoutes.js
+ ┃ ┣ 📜restaurantRoutes.js
+ ┃ ┗ 📜menuRoutes.js
+ ┣ 📂utils
+ ┃ ┣ 📜generateToken.js
+ ┃ ┗ 📜emailSender.js
+ ┣ 📜server.js
+ ┣ 📜.env
+ ┣ 📜.gitignore
+ ┣ 📜package.json
+ ┣ 📜README.md
+ ┗ 📜nodemon.json
 
+📜.env
+📜.gitignore
+📜package.json
+📜postcss.config.js
+📜tailwind.config.js
+📜tsconfig.json
+📜vite.config.ts
+📜README.md
 
 ```
 
@@ -91,8 +141,9 @@ You can try out the live demo of the app [here](https://vite-shadcn-mern-redux-s
 - **Lucide React**: An icon library used to display consistent and scalable icons across the app.
 
 ### **Backend**
-- **Node.js**: JavaScript runtime environment used to run the backend services (if applicable).
-- **Express.js**: A minimal and flexible Node.js web application framework (if backend is implemented).
+- **Node.js**: A JavaScript runtime built on Chrome's V8 JavaScript engine. It allows for building scalable server-side applications using JavaScript.
+- **Express**: A minimal and flexible Node.js web application framework. It simplifies the creation of RESTful APIs and handling HTTP requests.
+- **MongoDB**: A NoSQL database for storing application data. It provides a flexible schema and high performance for data management.
 - **REST API**: The backend interacts with the frontend through a RESTful API for handling user authentication, restaurant details, menu items, and orders.
 
 ### **Authentication and Security**
@@ -172,8 +223,7 @@ Before running the project, ensure you have the following installed:
 
 Here’s a detailed How to Use section containing features of the app and an Endpoints section in Markdown code for your README file:
 
-markdown
-Copy code
+
 ## **How to Use**
 
 ### **User Flow and Features**
